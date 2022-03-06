@@ -1,14 +1,16 @@
 import 'package:angeldress/screens/bottom_nav_bar.dart';
 import 'package:angeldress/screens/cart.dart';
 import 'package:angeldress/screens/favoris.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'screens/seller_home.dart';
+import 'screens/seller/seller_home.dart';
 import 'package:flutter/material.dart';
 import 'controller/cache.dart';
 
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

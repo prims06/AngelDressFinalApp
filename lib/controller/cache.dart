@@ -93,3 +93,13 @@ int _controller;
     );
   }
 }
+
+// git init
+// git add .
+// git commit -m "Depot initial"
+// git branch -M main
+// git remote add origin https://github.com/prims06/AngelDressFinalApp.git
+// git push -u origin main
+
+//  git config --global user.email "primsidriss@gmail.com"
+//   git config --global user.name "prims06"

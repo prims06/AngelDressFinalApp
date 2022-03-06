@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "308131729821",
+    "project_id": "angeldress-46663",
+    "storage_bucket": "angeldress-46663.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308131729821:android:7fc7b1cb2ef590e6c59f74",
+        "android_client_info": {
+          "package_name": "com.example.angeldress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308131729821-rleacl66h8astokohac12ltr46n4hcp0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy9_Ul_CmHoHWyUCw19Qe40RahvJfUxX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308131729821-rleacl66h8astokohac12ltr46n4hcp0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

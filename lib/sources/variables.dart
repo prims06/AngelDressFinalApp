@@ -3,12 +3,13 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-
+const kPrimaryColor = Color(0xFFFF7643);
+const kPrimaryLightColor = Color(0xFFFFECDF);
 var tailleTitreAppBAr = 67;
 
 var styleTitreAppBAr = GoogleFonts.montserrat(fontSize: 25.0, color: Color(0xffdb7032),);
 
-var styleTitre = GoogleFonts.montserrat(fontSize: 30.0, color: Colors.black87,);
+var styleTitre = GoogleFonts.montserrat(fontSize: 20.0, color: Colors.black87,);
 
 var tailleTitre = 67;
 
@@ -17,6 +18,39 @@ var tailleTexte = 14.0;
 var orangeEclatant = 0xffdb7032;
 
 var styleTexte = GoogleFonts.montserrat(fontSize: 14.0);
+const isAdmin = true;
+
+
+const kPrimaryGradientColor = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
+);
+const kSecondaryColor = Color(0xFF979797);
+const kTextColor = Color(0xFF757575);
+
+const kAnimationDuration = Duration(milliseconds: 200);
+
+final headingStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+  height: 1.5,
+);
+
+const defaultDuration = Duration(milliseconds: 250);
+
+// Form Error
+final RegExp emailValidatorRegExp =
+    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+const String kEmailNullError = "Please Enter your email";
+const String kInvalidEmailError = "Please Enter Valid Email";
+const String kPassNullError = "Please Enter your password";
+const String kShortPassError = "Password is too short";
+const String kMatchPassError = "Passwords don't match";
+const String kNamelNullError = "Please Enter your name";
+const String kPhoneNumberNullError = "Please Enter your phone number";
+const String kAddressNullError = "Please Enter your address";
+
 
 
 

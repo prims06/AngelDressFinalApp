@@ -1,10 +1,14 @@
 import 'package:angeldress/screens/bottom_nav_bar.dart';
-import 'package:angeldress/screens/seller_bottom_nav_bar.dart';
+import 'package:angeldress/screens/commande.dart';
+import 'package:angeldress/screens/page.dart';
+import 'package:angeldress/screens/seller/seller_bottom_nav_bar.dart';
 import 'package:angeldress/sources/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../models/setting_component.dart';
-import 'package:angeldress/screens/seller_home.dart';
+import 'package:angeldress/screens/seller/seller_home.dart';
+
+import 'assistance.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen();
@@ -39,13 +43,11 @@ class SettingScreen extends StatelessWidget {
                 child: ListView(
       scrollDirection: Axis.vertical,
       children: [
-        SettingComponent(text: "Mode sombre", icon: FontAwesomeIcons.adjust,iconEnd: FontAwesomeIcons.toggleOff, profilPress: (){},),
+        SettingComponent(text: "Mode sombre", icon: FontAwesomeIcons.adjust,iconEnd: FontAwesomeIcons.toggleOff, profilPress: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyPage()));},),
         SettingComponent(text: "Langue", icon: FontAwesomeIcons.language,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){_showDialog(context);}),
-        SettingComponent(text: "Mode vendeur", icon: FontAwesomeIcons.shareSquare,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SellerBottomNavBar()));
-    },),
-        SettingComponent(text: "Commandes", icon: FontAwesomeIcons.bookmark,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){},),
-        SettingComponent(text: "Historique", icon: FontAwesomeIcons.history,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){},),
-        SettingComponent(text: "Assistance", icon: FontAwesomeIcons.question,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){},),
+        SettingComponent(text: "Mode vendeur", icon: FontAwesomeIcons.shareSquare,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SellerHomeScreen()));}),
+        SettingComponent(text: "Assistance", icon: FontAwesomeIcons.question,iconEnd: FontAwesomeIcons.chevronRight, profilPress: (){      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AssistanceScreen()));}),
+       
       ], ),
               ),
             ), 

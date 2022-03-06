@@ -1,5 +1,6 @@
 import 'package:angeldress/screens/cart.dart';
-import 'package:angeldress/screens/seller_home.dart';
+import 'package:angeldress/screens/detail_produit.dart';
+import 'package:angeldress/screens/seller/seller_home.dart';
 import 'package:angeldress/sources/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,7 +17,7 @@ class ProductComponent extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       child: InkWell(
         onLongPress: (){print("Ajouter au panier");},
-        onTap: (){print("toi !");},
+        onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DetailProductScreen()));},
         child:Material(
           
            elevation: 10.0,
@@ -30,20 +31,35 @@ class ProductComponent extends StatelessWidget {
                               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      // margin: EdgeInsets.all(5.0),
-                      height:mediaQuery.height /4,
-                      // width: mediaQuery.width ,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFFFECDF),
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
-                        image: DecorationImage(
-                          fit: BoxFit.fitWidth,
-                          
-                          image: ExactAssetImage("assets/prod.jpg")
+                    Stack(
+                                          children: [Container(
+                        // margin: EdgeInsets.all(5.0),
+                        height:mediaQuery.height /4,
+                        // width: mediaQuery.width ,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFFECDF),
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+                          image: DecorationImage(
+                            fit: BoxFit.fitWidth,
+                            
+                            image: ExactAssetImage("assets/prod.jpg")
+                          ),
                         ),
+                        // child: Image.asset("assets/prod.jpg")
                       ),
-                      // child: Image.asset("assets/prod.jpg")
+                      Align(
+                        alignment: Alignment.topRight,
+                                              child: PopupMenuButton<int>(
+                          onSelected: (item)=> {print('Select: $item')},
+                          itemBuilder: (context) => [
+                          PopupMenuItem<int>(value:0, child: Text("Add to Cart",style: styleTexte,),),
+                          PopupMenuItem<int>(value:1, child: Text("Echanger",style: styleTexte,),),
+                          PopupMenuItem<int>(value:2, child: Text("Liker",style: styleTexte,),),
+                          PopupMenuItem<int>(value:3, child: Text("Signaler",style: styleTexte,),)
+                        ],
+                        ),
+                      )
+                                          ]
                     ),
                    Container(
                      padding: EdgeInsets.all(5),

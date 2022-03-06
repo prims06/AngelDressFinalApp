@@ -1,5 +1,6 @@
+import 'package:angeldress/screens/seller/admin_home.dart';
 import 'package:angeldress/screens/cart.dart';
-import 'package:angeldress/screens/seller_bottom_nav_bar.dart';
+import 'package:angeldress/screens/seller/seller_bottom_nav_bar.dart';
 import 'package:angeldress/sources/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
+    
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -34,26 +36,71 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      child: Text("ANGEL DRESS", style: GoogleFonts.montserratSubrayada(fontSize: 20.0),)
-                    ),
+      width: mediaQuery.width / 1.8,
+      decoration: BoxDecoration(
+        color: kSecondaryColor.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: TextField(
+        onChanged: (value) => print(value),
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 20,),
+                // horizontal: getProportionateScreenWidth(20),
+                // vertical: getProportionateScreenWidth(9)),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            hintText: "Search...",
+            prefixIcon: Icon(Icons.search)),
+            
+      ),
+    ),
                     Row(
                       
                       children: [ 
-                        CircleAvatar(
-                            backgroundColor: Color(0xffeaeaec),
-                            child: IconButton(icon: Icon(FontAwesomeIcons.search, 
-                            ), onPressed: null),
-                          ),
+                       
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 8.0),
                           child: CircleAvatar(
                             backgroundColor: Color(0xffeaeaec),
-                            child: IconButton(icon: Icon(FontAwesomeIcons.opencart,
-                             color: Color(orangeEclatant),), onPressed: (){
-                               
+                            child: Stack(
+                              overflow: Overflow.visible,
+                              children: [
+                                IconButton(icon: Icon(FontAwesomeIcons.opencart,
+                                 color: Color(orangeEclatant),), onPressed: (){
+                                   
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CartScreen()));
     
-                             }),
+                                 }),
+                                 Positioned(
+              top: -3,
+              right: -3,
+              child: Container(
+                height: 15,
+                width: 15,
+                decoration: BoxDecoration(
+                  color: Color(0xFFFF4848),
+                  shape: BoxShape.circle,
+                  // border: Border.all(width: 1.5, color: Colors.white),
+                ),
+                child: Center(
+                  child: Text(
+                    "17",
+                    style: TextStyle(
+                      fontSize: 10,
+                      height: 1,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            )
+       
+                              ],
+                            ),
                           ),
                         ),
                         IconButton(icon: Icon(FontAwesomeIcons.shareSquare,color: Color(orangeEclatant),
@@ -141,11 +188,13 @@ class _IncomingPageState extends State<IncomingPage>
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
+    var productHeight = mediaQuery.height / 1.1;
+    var productWidth = mediaQuery.width / 0.88;
     return Scaffold(
       // body: Padding(
       //   padding: const EdgeInsets.all(8.0),
         body: GridView.count(crossAxisCount: 2,
-        childAspectRatio: ( 500 / mediaQuery.height / 1.4),
+        childAspectRatio: ( productWidth / productHeight),
         children: [
          ProductComponent(),
          ProductComponent(),

@@ -1,0 +1,4 @@
+class Query{
+ var mediaQuery;
+
+}
